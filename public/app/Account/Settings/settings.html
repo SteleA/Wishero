@@ -1,0 +1,43 @@
+<div layout="row" class="settings">
+
+
+    <form name="userForm" ng-submit="submitForm()" flex="40" flex-offset-gt-md="30" flex-md="100" flex-sm="100">
+      <span style="color:red">{{error}}</span>
+
+      <md-input-container>
+        <label>First name</label>
+        <input name="firstName" ng-model="form.firstName" placeholder="Enter your first name">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Last name</label>
+        <input name="firstName" ng-model="form.lastName" placeholder="Enter your last name">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Birthday</label>
+        <input name="birthday" ng-model="form.birthday" type="date">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Username</label>
+        <input name="userName" ng-model="form.username" placeholder="Enter new username">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Email</label>
+        <input name="userName" ng-model="form.email" placeholder="Enter your email">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Password</label>
+        <input name="password" type="password" ng-model="form.password" placeholder="Enter new password">
+      </md-input-container>
+
+      <div layout="row" layout-align="center center">
+        <button href class="ghost-btn save" type="submit" ng-disabled="userForm.$invalid">Save</button>
+      </div>
+    </form>
+
+
+</div>

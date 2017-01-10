@@ -1,0 +1,39 @@
+<section class="profile" layout="column" layout-align="center center" flex=100>
+
+  <div class="wrapper">
+    <input id=myFile type="file" hide accept="image/*" userData="{{user}}" upload-picture>
+    <img id="trigger" data-pic="true" class="picture" ng-src="{{user.picture}}" alt="user picture" />
+  </div>
+
+  <div class="user">
+    <span class="name">{{user.firstName + ' ' + user.lastName || user.facebook._json.name || user.username}}</span>
+    <div layout="row" layout-align="space-around center" class="stats">
+      <div flex>
+        <span class="type">Wishes</span>
+        <span class="number">{{wishes || 0}}</span>
+      </div>
+      <div class="divider"></div>
+      <div>
+        <span class="type">Friends</span>
+        <span class="number">{{user.friends.length || 0}}</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <button ui-sref="settings" class="edit ghost-btn">Edit profile</button> -->
+
+
+
+
+
+
+</section>
+
+<wishlist>
+  <item-grid show="all"></item-grid>
+</wishlist>
+
+
+
+<footer ng-include="'app/Commons/footer.html'"></footer>

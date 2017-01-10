@@ -1,0 +1,31 @@
+<div class="itemGrid">
+  <md-grid-list
+        md-cols-sm="1" md-cols-md="3" md-cols-gt-md="5"
+        md-row-height-gt-md="1:1" md-row-height="4:3"
+        md-gutter="0px" md-gutter-gt-sm="0px" >
+    <md-grid-tile ng-repeat="wish in wishlist.items | orderBy:['new','-priority']"
+                  md-rowspan="1"
+                  md-colspan="1"
+                  md-colspan-sm="1"
+                  ng-class="item"
+                  class="yo"
+
+                  ng-style="{'background': 'url({{wish.img || 'https://unsplash.it/800/' + (400 + $index) +'?random'}}) no-repeat 50% 0 '}"
+
+                   >
+
+      <span ng-show="showExtras" class="icon ion-gear-a edit" edit-item item="{{wish}}" wishlist="{{wishlist._id}}"></span>
+
+      <div class="" ng-show="showExtras">
+        <input id="changePictureInput" type="file" hide accept="image/*" >
+        <span fileread class="changePic ion-image" wish="{{wish}}" wl="{{wishlist}}"></span>
+      </div>
+        <!-- <img ng-src="{{wish.img}}" alt="" /> -->
+
+
+      <md-grid-tile-footer layout="row" layout-align="center center">
+          <h3><a class="link" target="blank" ng-href="{{wish.url}}">{{wish.name}}</a></h3>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+  </md-grid-list>
+</div>

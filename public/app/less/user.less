@@ -1,0 +1,128 @@
+.user {
+
+  .wrapper {
+    margin: auto;
+    .icon {
+      font-size: 130px;
+      display: block;
+      text-align: center;
+      color: rgba(0,0,0,0.1);
+    }
+  }
+
+  .user {
+    text-align: center;
+    .name {
+      font-weight: 400;
+      color: rgba(0,0,0,0.5);
+      display: block;
+    }
+  }
+
+  .wishlist {
+
+    .title {
+      text-align: center;
+      display: block;
+      font-size: 32px;
+      padding: 15px 0;
+      margin: 15px 0 0;
+      border-top: 1px solid rgba(0,0,0,0.03);
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+      text-transform: uppercase;
+      font-weight: lighter;
+      color: white;
+      background: @sidebar-bg;
+    }
+
+    @media @phone {
+      .title {
+        font-size: 24px;
+      }
+    }
+
+    .wish{
+
+      margin-bottom: 10px;
+
+
+
+      .imageWrapper {
+        //min-width: 300px;
+        // height: 250px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+
+        .image {
+          max-height: 600px;
+          min-height: 250px;
+          display: block;
+          margin: auto;
+          z-index: 5;
+          position: relative;
+          width: 100%;
+        }
+
+        .imageCover {
+          position: absolute;
+          top: -50%;
+          width: 100%;
+          min-height: 500px;
+          opacity: 0.15;
+          max-height: 1000px;
+        }
+
+
+
+      }
+      .meta {
+        // position: absolute;
+        background: rgba(255,255,255,1);
+        padding: 10px;
+        border: 1px solid rgba(0,0,0,0.1);
+        // height: 40px;
+        width: 100%;
+
+        bottom: 0;
+        z-index: 10;
+
+        @media @phone {
+          .name {
+            max-width: 250px!important;
+          }
+        }
+
+        .name {
+          text-align: left;
+          font-size: 16px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          max-width: 400px;
+          display: block;
+          margin-top: 0;
+          color:@sidebar-bg;
+          font-weight: 300;
+
+
+        }
+        .url {
+          font-size: 10px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          width: 200px;
+          display: block;
+          color: @main-color;
+        }
+
+
+        .goToUrl {
+          font-size: 30px;
+          color: @main-color;
+        }
+      }
+    }
+  }
+}

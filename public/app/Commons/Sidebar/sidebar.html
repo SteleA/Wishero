@@ -1,0 +1,48 @@
+<section flex="none">
+  <span class="title">Wishlists</span>
+  <div ng-repeat="wishlist in wishlists | orderBy:'-items.length'">
+
+    <a  ui-sref-active="active"
+        ui-sref="{{'wishlist({username:\'' + user.username + '\', id:\'' + wishlist._id + '\'})'}}"
+        class="sidebarBtn"
+        ng-click="toggleSidenav('left')"
+    >
+
+      <span layout="row" layout-align="space-between center">
+        <span flex>{{wishlist.name}}</span>
+        <span flex="initial">{{wishlist.items.length}}</span>
+      </span>
+
+    </a>
+
+  </div>
+
+  <a class="ghost-btn" ui-sref="createWishlist" flex="80" flex-offset="10" ng-click="toggleSidenav('left')">Create wishlist</a>
+</section>
+
+<section flex="auto">
+  <span class="title">Friends</span>
+
+
+  <div>
+
+    <a
+      ui-sref-active="active"
+      class="sidebarBtn"
+      ng-click="toggleSidenav('left')"
+      ng-repeat="friend in user.friends | orderBy:['friend.firstName', 'friend.username']"
+      ui-sref="{{'user({username:\'' + friend.username + '\'})'}}"
+    >
+
+      <span layout="row" layout-align="space-between center" >
+        <span flex ng-hide="friend.firstName">{{friend.username}}</span>
+        <span flex>{{friend.firstName + ' ' + friend.lastName}}</span>
+        <span flex="initial" class="icon ion-ios-close-outline" ng-click="removeFriend(friend)"></span>
+      </span>
+
+    </a>
+    <a href class="ghost-btn" flex="80" flex-offset="10" ng-click="addFriend(); toggleSidenav('left')">Add a friend</a>
+  </div>
+
+
+</section>

@@ -1,0 +1,51 @@
+
+<div class="user profile" layout="column">
+
+  <div class="animated" ng-class="loading ? 'ng-hide':'fadeIn'">
+
+    <md-card flex ng-class="userStatus ? 'show' : 'hide'">
+      <md-card-content>
+        <h2 class="md-title">{{userStatus}} <span class="icon ion-sad-outline"></span></h2>
+      </md-card-content>
+    </md-card>
+
+  <div class="wrapper" ng-show="pubUser.user.picture">
+    <img class="picture"  ng-src="{{pubUser.user.picture}}" alt="user picture" />
+  </div>
+
+  <div class="user" ng-show="pubUser">
+    <span class="name"> <span>{{ pubUser.user.firstName + ' ' + pubUser.user.lastName}}</span> <span ng-show="!pubUser.user.firstName">{{pubUser.user.username}}</span> </span>
+    <div layout="row" layout-align="space-around center" class="stats" flex="40" flex-offset-gt-md="30" flex-md="100" flex-sm="100">
+      <div>
+        <span class="type">Wishlists</span>
+        <span class="number">{{pubUser.wishlists.length|| 0}}</span>
+      </div>
+      <div class="divider"></div>
+      <div>
+        <span class="type">Friends</span>
+        <span class="number">{{pubUser.user.friends.length || 0}}</span>
+      </div>
+    </div>
+  </div>
+
+  <wishlist>
+    <item-grid pub="{{pubUser}}"></item-grid>
+  </wishlist>
+
+
+
+
+
+
+
+
+  <!-- <pre>{{user | json}}</pre> -->
+
+
+
+  <!-- <pre>
+  {{pubUser | json}}
+</pre> -->
+  </div>
+</div>
+<footer ng-include="'app/Commons/footer.html'"></footer>

@@ -1,0 +1,61 @@
+var User                = require('../../user/user.model');
+var FACEBOOK_APP_ID     = require('../../../config').fbAppID;
+var FACEBOOK_APP_SECRET = require('../../../config').fbAppSecret;
+var URLcallback         = require('../../../config').URL;
+var passport            = require('passport');
+var FacebookStrategy    = require('passport-facebook').Strategy;
+var auth                = require('../auth.service');
+var helpers             = require('../../../helpers.js');
+var moment              = require('moment');
+
+
+
+module.exports = function(req, res) {
+
+  passport.use(new FacebookStrategy({
+      clientID:     FACEBOOK_APP_ID,
+      clientSecret: FACEBOOK_APP_SECRET,
+      callbackURL:  URLcallback + '/api/auth/facebook/callback',
+      profileFields: ['displayName', 'emails', 'first_name', 'gender', 'last_name', 'locale', 'link', 'location', 'friendlists']
+    },
+    function(accessToken, refreshToken, profile, done) {
+
+
+
+      User.findOne({$or: [{'facebook.id': profile.id}, {'email': profile._json.email}]}, function(err, user) {
+          if (err) { return done(err); }
+
+          if(!user){
+            var email = helpers.makeId(5) + '@noemail.com';
+            if(profile._json.email) email = profile._json.email;
+
+
+            var newuser = new User({
+              username: profile.id,
+              password: helpers.makeId(10),
+              email: email,
+              facebook: profile,
+              confirmToken: helpers.makeId(10)
+            });
+            newuser.username = newuser.username.toLowerCase();
+            newuser.role     = 'user';
+
+            return newuser.save(function (err) {
+              if (err) return res.status(500).send(err);
+              return res.redirect('/token/' + auth.signToken(newuser._id, newuser.role));
+            });
+          }
+
+          user.lastLogin  = moment();
+          user.facebook   = profile;
+
+          user.save(function(err, user){
+            res.redirect('/token/' + auth.signToken(user._id, user.role));
+          });
+
+
+      });
+
+    }
+  ));
+};

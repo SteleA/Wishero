@@ -1,0 +1,18 @@
+<md-dialog aria-label="Send feedback"  ng-cloak class="editItem" flex="40" flex-offset-sm-md="30" flex-sm="100">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Give feedback</h2>
+    </div>
+  </md-toolbar>
+  <form name="feedbackForm" ng-submit="send(form)">
+    <div class="md-dialog-content">
+      <md-input-container>
+        <label>Write anything</label>
+        <textarea name="feedback" ng-model="form.feedback" autocomplete="off" required></textarea>
+      </md-input-container>
+    </div>
+    <div class="md-actions">
+      <md-button type="submit" ng-click="save()" ng-disabled="feedbackForm.$invalid">send</md-button>
+    </div>
+  </form>
+</md-dialog>

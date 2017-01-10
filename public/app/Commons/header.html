@@ -1,0 +1,35 @@
+<div class="md-toolbar-tools" id="header" ng-controller="HeaderCtrl">
+
+  <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button" ng-hide="!user" aria-label="sidebar button">
+    <i class="icon ion-navicon"></i>
+  </md-button>
+
+  <div flex>
+    <span class=""  ng-bind="page.title().split('|')[0]"></span>
+  </div>
+
+  <div id="logo" flex class="text-center" ng-hide="user">
+    Wishero
+  </div>
+
+
+  <div class="rightSide" flex>
+
+    <div class="loginSignup" ng-hide="user">
+      <a ui-sref="login" href class="login">Login</a>
+      <span class="icon ion-happy-outline"></span>
+      <a ui-sref="signup" class="signup" href>Signup</a>
+    </div>
+
+    <user></user>
+
+
+  </div>
+
+
+
+
+
+
+
+</div>

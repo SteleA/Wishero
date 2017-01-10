@@ -1,0 +1,52 @@
+<div ng-show="user">
+  <div class="name" hide-sm>
+    <div hide-sm>
+      <span class="welcome">Welcome</span>
+      <span class="user">{{user.firstName || user.facebook.displayName || user.username}}</span>
+    </div>
+  </div>
+
+  <md-menu md-offset="0 35">
+    <md-button aria-label="Open menu" class="md-icon-button menuBtn" ng-click="$mdOpenMenu($event)">
+      <div class="wrapper">
+        <img ng-src="{{user.picture}}" class="picture">
+      </div>
+    </md-button>
+    <md-menu-content width="3">
+      <md-menu-item hide></md-menu-item>
+      <md-menu-item>
+        <md-button ui-sref="profile">
+
+          Profile
+        </md-button>
+      </md-menu-item>
+      <md-menu-item>
+        <md-button ui-sref="settings">
+          Settings
+        </md-button>
+      </md-menu-item>
+      <md-menu-item>
+        <md-button ui-sref="about">
+          About
+        </md-button>
+      </md-menu-item>
+      <md-menu-item>
+        <md-button ui-sref="privacy">
+          Privacy
+        </md-button>
+      </md-menu-item>
+      <md-menu-item>
+        <md-button ng-click="feedback()">
+          Send feedback
+        </md-button>
+      </md-menu-item>
+      <md-menu-item>
+        <md-button ng-click="userAction.logout()" class="logout">
+          Logout
+        </md-button>
+      </md-menu-item>
+    </md-menu-content>
+  </md-menu>
+
+
+</div>

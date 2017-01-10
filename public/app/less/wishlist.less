@@ -1,0 +1,156 @@
+
+.wishlist {
+
+  .wishlistTitle {
+    margin-bottom: 15px;
+    display: block;
+
+    input {
+      width: 100%;
+      border-bottom-width: 0px;
+      font-weight: bold;
+    }
+  }
+
+
+  .right{
+    text-align: right;
+    span {
+      margin-right: 5px;
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+  .md-menu {
+    padding: 0px;
+    span {
+      padding: 0 10px;
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  .public {
+    margin: 0;
+  }
+
+  .md-subheader-inner {
+    padding: 5px 0px 10px 0px!important;
+  }
+
+  .name, .addItem {
+    padding-bottom: 0px;
+  }
+
+  .item {
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    min-height: 80px;
+
+    .priority {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: @main-color;
+      border-radius: 0 0 0 200px;
+      width: 50px;
+      height: 50px;
+      color:white;
+       span{
+         position: relative;
+         top: -5px;
+         right: -5px;
+       }
+    }
+
+    @media @phone {
+      .priority {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        background: @main-color;
+        border-radius: 200px;
+        width: 50px;
+        height: 50px;
+        color:white;
+         span{
+           text-align: center;
+           position: initial;
+         }
+      }
+    }
+
+    .item-text {
+      padding: 15px;
+      .title {
+        margin-bottom: 0;
+      }
+    }
+
+    .imgWrapper {
+      min-height: 100px;
+      width: 150px;
+      overflow: hidden;
+      position: relative;
+      .itempic {
+        height: 150px;
+        max-width: 150px;
+        margin-bottom: -4px;
+      }
+    }
+
+
+    @media @phone {
+      .imgWrapper {
+        min-height: 100px;
+        overflow: hidden;
+        width: inherit;
+        position: relative;
+        .itempic {
+          width: 100%;
+          width: inherit;
+          height: inherit;
+          max-height: 155px;
+          margin: auto;
+          display: block;
+          max-width: none;
+
+        }
+
+      }
+    }
+
+
+
+
+
+    .title {
+      font-weight: bold!important;
+      text-transform: uppercase;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .desc {
+      font-size: 12px;
+      width: 100%;
+      word-break: break-all;
+    }
+    .url {
+      color: @main-color;
+      font-size: 14px;
+      text-decoration: none;
+      margin-top: 5px;
+      font-weight: 400;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+  }
+
+
+}

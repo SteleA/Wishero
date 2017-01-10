@@ -1,0 +1,30 @@
+<div layout="row" layout="row" class="login" loading>
+  <div flex="40" flex-offset-gt-md="30" flex-md="100" flex-sm="100">
+    <span style="color:red">{{error}}</span>
+    <form name="userForm" ng-submit="submitForm(form)">
+      <md-input-container>
+        <label>Enter username or email</label>
+        <input name="userName" ng-model="form.username" required aria-label="forgot password">
+      </md-input-container>
+
+
+      <div layout="column">
+          <button class="ghost-btn loginBtn" type="submit" ng-disabled="userForm.$invalid">Submit</button>
+      </div>
+
+      <div layout="row" layout-align="space-between center" class="lastRow">
+
+
+        <span>
+          <span>Login with</span>
+          <md-button type="button" class="md-fab md-mini md-primary fb"ng-click="loginFb()" aria-label="login with facebook">
+            <i class="icon ion-social-facebook"></i>
+          </md-button>
+        <span>
+
+    </form>
+
+
+
+  </div>
+</div>

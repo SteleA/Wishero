@@ -1,0 +1,23 @@
+
+<md-subheader class="md-primary subheader" ng-controller="subheaderCtrl" ng-show="showSubheader">
+
+  <div layout="row" layout-align="space-between center">
+
+    <span add-item class="md-button md-accent addWish">Add wish</span>
+
+
+    <md-menu md-offset="0 35" flex="none">
+      <span class="icon ion-android-more-vertical md-title menu" ng-click="$mdOpenMenu($event)"></span>
+      <md-menu-content width="3">
+        <md-menu-item hide></md-menu-item>
+        <md-menu-item>
+          <md-button ng-click="deleteWishlist(subheader)" class="">
+            <span class="icon ion-trash-a"></span>
+            Delete wishlist
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+
+  </div>
+</md-subheader>

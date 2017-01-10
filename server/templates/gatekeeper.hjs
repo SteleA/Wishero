@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title> {{title}} </title>
+    <meta name="Description" content="{{description}}" />
+    <meta name="google-site-verification" content="BREBpH6NOOAgAvq_Uo7OaKSwuqZjBtEXI-MDmuNEEiE" />
+
+    <meta name="twitter:card"                                   content="summary">
+    <meta name="twitter:site"                                   content="@_wishero">
+    <meta name="twitter:url"          property="og:url"         content="http://www.wishero.co{{socialUrl}}">
+    <meta name="twitter:title"        property="og:title"       content="{{title}}">
+    <meta name="twitter:description"  property="og:description" content="{{description}}">
+    <meta name="twitter:image"        property="og:image"       content="https://unsplash.it/800/400?random">
+
+
+    <script type="text/javascript">
+      console.log('you shall pass')
+      window.location.href = "/#{{url}}";
+    </script>
+
+  </head>
+  <body>
+
+  </body>
+</html>

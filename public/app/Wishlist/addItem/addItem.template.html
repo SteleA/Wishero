@@ -1,0 +1,24 @@
+<md-dialog aria-label="Add friend"  ng-cloak class="addFriend" flex>
+<form ng-submit="addItem()">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Add a wish</h2>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+
+      <md-input-container>
+        <label>Write name or URL</label>
+        <input required name="wish" ng-model="newItem.item" autocomplete="off" click-to-select>
+      </md-input-container>
+
+    </div>
+  </md-dialog-content>
+
+  <div class="md-actions" layout="row">
+    <md-button type="submit">Add wish</md-button>
+  </div>
+
+</form>
+</md-dialog>

@@ -1,0 +1,6 @@
+<form ng-submit="updateWishlist(wishlist)">
+  <md-input-container flex="auto" md-no-float  class="name wishlistTitle" >
+    <input ng-model="wishlist.name" ng-change="typewatch()" ng-value="wishlist.name" required autocomplete="off" click-to-select aria-label="wishlist name">
+  </md-input-container>
+  <input type="submit" hide>
+</form>

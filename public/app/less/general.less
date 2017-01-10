@@ -1,0 +1,112 @@
+//chome fix
+a:focus, span:focus, div:focus, input:focus { outline:0 !important; }
+
+.pull-right {
+  float:right;
+}
+
+.show {
+  display: block!important;
+}
+
+#logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 52px;
+  color:white;
+}
+
+@media @phone {
+  .sidebar {
+    #logo {
+      display: block;
+    }
+  }
+  #header{
+    #logo {
+      display: none!important;
+    }
+  }
+
+}
+
+.subtitle {
+  display: block;
+}
+
+#logo.dark {
+  color:@main-color;
+
+}
+
+.text-center {
+  text-align: center;
+}
+
+.loadingPicture {
+  background: rgba(0,0,0,0.02);
+}
+
+.link {
+  color: @main-color;
+}
+
+.ghost-btn {
+
+  text-align: center;
+  color:rgba(0,0,0,0.5);
+  text-transform: uppercase;
+
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,0.1);
+  height: 36px;
+
+
+  -webkit-border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 5px;
+  -moz-background-clip: padding;
+  border-radius: 5px;
+  background-clip: padding-box;
+
+
+
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+
+  background: #ffffff;
+
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  zoom: 1;
+  -webkit-backface-visibility: hidden;
+  position: relative;
+}
+.ghost-btn:hover {
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
+
+  border: 1px solid @main-color;
+
+  background-color: @main-color;
+  color: white;
+}
+.ghost-btn:focus {
+  outline: none;
+}
+
+.ghost-btn:disabled {
+  background: rgba(0, 0, 0, 0.1);
+
+}
+
+.ghost-btn:disabled:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0,0,0,.1);
+  color: rgba(0,0,0,.5);
+}

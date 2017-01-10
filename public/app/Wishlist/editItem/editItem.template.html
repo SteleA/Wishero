@@ -1,0 +1,34 @@
+<md-dialog aria-label="Edit item" flex  ng-cloak class="editItem" flex="40" flex-md="100" flex-sm="100">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Change Wish</h2>
+      <span flex></span>
+      <a class="md-primary md-hue-1 delete" ng-click="delete()"><span class="ion-trash-a icon"></span></a>
+    </div>
+  </md-toolbar>
+  <form>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-input-container>
+          <label>Name</label>
+          <input required name="wish" ng-model="item.name" autocomplete="off" click-to-select>
+        </md-input-container>
+        <md-input-container>
+          <label>URL</label>
+          <input name="url" ng-model="item.url" autocomplete="off" ng-change="typewatch()" click-to-select>
+        </md-input-container>
+        <div id="priority">
+          <span class="wishmeter">Wishometer</span>
+          <md-slider md-discrete min="0" max="100" ng-model="item.priority" aria-label="wishmeter slider"></md-slider>
+        </div>
+        <div layout="row" layout-align="space-around center" >
+          <md-progress-circular ng-show="loading" md-mode="indeterminate"></md-progress-circular>
+          <img pil ng-src="{{item.img}}" class="itemImage" ng-hide="loading">
+        </div>
+      </div>
+    </md-dialog-content>
+    <div class="md-actions" layout="row">
+      <md-button type="submit" ng-click="save()">Save</md-button>
+    </div>
+  </form>
+</md-dialog>

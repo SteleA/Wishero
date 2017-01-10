@@ -1,0 +1,21 @@
+<div
+  class="md-3-line md-whiteframe-1dp item"
+  ng-repeat="item in wishlist.items | orderBy:['new','-priority']"
+  layout-gt-sm="row"
+  >
+
+  <div class="imgWrapper" flex="none">
+    <input id="changePictureInput" type="file" fileread="uploadme" hide accept="image/*" wish="{{item}}" wl="{{wishlist}}">
+    <img pil changePicture ng-src="{{item.img || 'https://unsplash.it/800/' + (400 + $index) +'?random'}}" class="itempic" alt="item pic"/>
+  </div>
+
+  <div class="text" flex layout="row" layout-align="center center" edit-item item="{{item}}" wishlist="{{wishlist._id}}">
+    <div flex class="item-text">
+      <div class="title">{{item.name}}</div>
+      <div class="url">{{item.url}}</div>
+    </div>
+
+
+    <div flex="none" class="priority" layout="row" layout-align="center center"> <span>{{item.priority}}</span> </div>
+  </div>
+</div>

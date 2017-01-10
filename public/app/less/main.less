@@ -1,0 +1,149 @@
+#loading {
+  color:white;
+  font-weight:lighter;
+  text-transform:uppercase;
+  font-size:24px;
+  position: fixed;
+  z-index: 1000000;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #B24592; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #B24592 , #F15F79); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #B24592 , #F15F79); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  span {
+  display: inline-block;
+  text-align: center;
+  }
+}
+
+#cover {
+  background: url('../assets/cover.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+ opacity: 0.2;
+}
+
+.main{
+  position: fixed;
+  z-index: 100000;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  background: #B24592; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #B24592 , #F15F79); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #B24592 , #F15F79); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+.text{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+
+  .logo {
+    color:white;
+    font-size: 52px;
+    display: block;
+  }
+
+  .subtitle {
+    color:rgba(255,255,255,0.7);
+    font-size: 42px;
+    display: block;
+    font-weight: lighter;
+    text-transform: uppercase;
+  }
+
+  .about{
+    color: white;
+    margin-top: 15px;
+    display: block;
+    cursor: pointer;
+  }
+
+
+
+    @media @phone {
+      .subtitle {
+
+        font-size: 20px;
+
+      }
+    }
+
+  .ghost-btn {
+    margin-top: 20px;
+    background: rgba(0,0,0,0);
+    display: block;
+    height: auto;
+    padding: 10px 0;
+    color: white;
+    font-weight: bold;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .ghost-btn:hover {
+    border: 1px solid white;
+  }
+}
+
+
+  .cover {
+
+
+
+    top:0;
+    left:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    img {
+      //width: 100%;
+      //height: 100%;
+      min-width: 800px;
+      min-height: 600px;
+      opacity: 0.25;
+      z-index: 10;
+
+    }
+
+    @-webkit-keyframes fadeInCover {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 0.25;
+      }
+    }
+
+    @keyframes fadeInCover {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 0.25;
+      }
+    }
+
+    .fadeInCover {
+      -webkit-animation-name: fadeInCover;
+      animation-name: fadeInCover;
+    }
+
+  }
+
+}

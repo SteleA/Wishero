@@ -1,0 +1,47 @@
+<md-dialog aria-label="Add friend"  ng-cloak class="addFriend" flex>
+<form ng-submit="addFriend()">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Add a friend</h2>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+
+
+      <md-autocomplete
+          md-selected-item="item"
+          md-search-text="searchText"
+          md-items="item in querySearch(searchText)"
+          md-item-text="cleanUser(item)"
+          md-min-length="1"
+          placeholder="Write your friend's email or username"
+          md-menu-class="autocomplete-custom-template"
+          >
+        <md-item-template>
+
+            <!-- <span class="picture" ng-show="{{item.picture}}"><img ng-src="{{item.picture}}"></span> -->
+
+            <span class="user" ng-show="item.firstName">
+              <span md-highlight-text="searchText"  class="username">{{item.username}}</span>
+              <span class="name">{{item.firstName}} {{item.lastName}}</span>
+            </span>
+            <span md-highlight-text="searchText"  class="username" ng-hide="item.firstName">{{item.username}}</span>
+
+        </md-item-template>
+        <md-not-found>
+          "{{searchText}}" not found.
+          <span ng-if="!isEmail(searchText)">Write an email to invite.</span>
+          <a ng-click="sendInvite(searchText)" ng-if="isEmail(searchText)"><strong class="invite">Click to invite!</strong></a>
+        </md-not-found>
+      </md-autocomplete>
+
+    </div>
+  </md-dialog-content>
+
+  <div class="md-actions" layout="row">
+    <md-button type="submit">Add friend</md-button>
+  </div>
+
+</form>
+</md-dialog>

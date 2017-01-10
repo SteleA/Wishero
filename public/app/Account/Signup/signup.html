@@ -1,0 +1,46 @@
+<div layout="row" class="login" loading>
+  <div flex="40" flex-offset-gt-md="30" flex-md="100" flex-sm="100">
+
+    <form name="userForm" ng-submit="submitForm(form)" novalidate>
+
+      <span style="color:red">{{error}}</span>
+
+      <md-input-container>
+        <label>Username</label>
+        <input name="userName" ng-model="form.username" required>
+      </md-input-container>
+
+      <md-input-container>
+        <label>Email</label>
+        <input name="Email" ng-model="form.email" required type="email">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Password</label>
+        <input name="password" type="password" ng-model="form.password" required>
+      </md-input-container>
+
+      <div layout="column">
+          <button class="ghost-btn loginBtn" type="submit" ng-disabled="userForm.$invalid">Signup</button>
+     </div>
+
+
+     <div layout="row" layout-align="space-between center" class="lastRow">
+       <a class="forgotPassword md-button" href ui-sref="forgot">Forgot password</a>
+
+       <span>
+         <span>Login with</span>
+         <md-button type="button" class="md-fab md-mini md-primary fb" ng-click="loginFb()" aria-label="Signup button facebook">
+           <i class="icon ion-social-facebook"></i>
+         </md-button>
+       <span>
+
+
+
+     </div>
+
+
+    </form>
+
+  </div>
+</div>

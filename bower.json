@@ -1,0 +1,16 @@
+{
+  "name": "wishero",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "~1.4.5",
+    "angular-ui-router": "~0.2.15",
+    "angular-md5": "~0.1.7",
+    "angular-material": "1.0",
+    "angular-mocks": "~1.4.7",
+    "angular-messages": "~1.4.7",
+    "is_js": "~0.7.4",
+    "animate.css": "~3.4.0",
+    "antimoderate": "https://github.com/whackashoe/antimoderate.git",
+    "lodash": "~3.10.1"
+  }
+}

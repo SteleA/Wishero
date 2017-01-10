@@ -1,0 +1,21 @@
+<div layout="row" class="login" loading>
+  <div flex="40" flex-offset-gt-md="30" flex-md="100" flex-sm="100">
+    <span style="color:red">{{error}}</span>
+    <form name="userForm" ng-submit="submitForm(form)">
+
+      <md-input-container>
+        <label>Enter new password</label>
+        <input name="password" type="password" ng-model="form.password" required>
+      </md-input-container>
+
+
+      <div layout="column">
+          <button class="ghost-btn loginBtn" type="submit" ng-disabled="userForm.$invalid">Change password</button>
+      </div>
+
+    </form>
+
+
+
+  </div>
+</div>
